@@ -1,0 +1,200 @@
+/*
+Template Name: film banner
+File: Layout CSS
+Author: Templates On Web
+Author URI: http://templateonweb.com/
+Licence: <a href="http://www.templateonweb.com/terms.php?v=content&contentid=152">Website Template Licence</a>
+*/
+
+body{
+font-family: 'Philosopher', sans-serif; 
+  }
+h1,h2,h3,h4,h5,h6{
+padding:0;
+margin:0;
+}
+a:hover{
+text-decoration:none;
+}
+ul{
+padding:0;
+margin:0;
+list-style:none;
+}
+p{
+padding:0;
+margin:0;
+}
+.space_left{
+padding-left:0; 
+} 
+.space_right{
+padding-right:0; 
+} 
+.space_all{
+padding:0; 
+} 
+.border_none_1{
+border:none!important;
+ }
+
+/********************* about_main ****************/
+#about_main{ 
+   background-image: url(../img/28.jpg);   
+   background-repeat: no-repeat;
+   background-size: cover;  
+ }
+.about_inner{  
+   padding-top:200px;
+   padding-bottom:250px;
+   background: #00000094;
+ }
+.about_main_1 h2{ 
+   font-size:50px;
+   color:#fff;
+ }
+/********************* about_main_end ****************/
+/********************* about ****************/
+#about{ 
+  padding-top:30px;
+  padding-bottom:30px;
+  background-color: #f2f2f2;
+ }
+.about_1 h2{ 
+  font-size:30px;
+  font-weight:bold;
+  color: gray;
+ }
+.about_2{ 
+  float:right;
+ }
+.about_2 a i{ 
+  font-size:40px;
+  color:#eb1c24;
+ }
+.about_3 h4{ 
+  text-align:center;
+  font-size:25px;
+  font-weight:bold;
+  padding-bottom:30px;
+ }
+.about_4 p{ 
+  font-size:16px;
+  color:#000;
+  line-height:25px;
+  padding-top:10px;
+  font-weight:bold;
+ }
+/********************* about_end ****************/
+/********************* about_middle ****************/
+#about_middle{
+    padding-top: 40px;
+    padding-bottom: 40px;
+	background:#fff;
+}
+.about_middle h1{
+    font-size: 40px;
+    font-weight: bold; 
+   }
+.about_middle_1{
+    margin-top:50px;  
+  }
+.about_middle_1 h3{
+    font-size: 35px;
+    font-weight: bold;
+   }
+.about_middle_1_inner p{
+	color:#666; 
+	font-size:20px;
+	margin-top:20px;
+	letter-spacing:1px;
+	line-height:1.8em; 
+  }
+/********************* about_middle_end ****************/
+
+
+
+
+
+
+
+
+@media screen and (max-width : 767px){
+.about_inner {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+#about {
+    text-align: center;
+}
+.about_3 h4 {
+    padding-bottom: 5px;
+}
+.about_2 {
+    float: none;
+    padding-bottom: 10px;
+}
+.hr_2 {
+    padding-bottom: 10px;
+}
+.about_5 img{ 
+  padding-top:10px;
+}
+.about_middle h1 {
+    font-size: 30px;
+}
+#about_middle {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+.about_middle_1 {
+    margin-top: 5px;
+}
+.about_middle_1_inner p {
+    margin-top: 5px;
+}
+}
+
+@media (min-width:470px) and (max-width:767px) {
+
+}
+ 
+@media (min-width:768px) and (max-width:960px) { 
+.about_inner {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.about_5 img{ 
+    padding-top:30px;
+}
+.about_middle_1 h3 {
+    font-size: 30px;
+}
+.about_middle_1_inner p {
+    font-size: 18px;
+    line-height: 1.3em;
+}
+} 
+
+ 
+@media (min-width:961px) and (max-width:1200px) {
+.about_inner {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.about_5 img{ 
+    padding-top:30px;
+}
+.about_middle_1 h3 {
+    font-size: 30px;
+}
+.about_middle_1_inner p {
+    font-size: 18px;
+    line-height: 1.3em;
+}
+}
+
+@media (min-width:1201px) and (max-width:1320px) {
+
+}

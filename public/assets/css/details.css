@@ -1,0 +1,327 @@
+/*
+Template Name: film banner
+File: Layout CSS
+Author: Templates On Web
+Author URI: http://templateonweb.com/
+Licence: <a href="http://www.templateonweb.com/terms.php?v=content&contentid=152">Website Template Licence</a>
+*/
+
+body{
+font-family: 'Philosopher', sans-serif;
+  }
+h1,h2,h3,h4,h5,h6{
+padding:0;
+margin:0;
+}
+a:hover{
+text-decoration:none;
+}
+ul{
+padding:0;
+margin:0;
+list-style:none;
+}
+p{
+padding:0;
+margin:0;
+}
+.space_left{
+padding-left:0;
+}
+.space_right{
+padding-right:0;
+}
+.space_all{
+padding:0;
+}
+.border_none_1{
+border:none!important;
+ }
+
+
+/********************* details_end****************/
+.details_1 h2 a {
+    font-size: 30px;
+    color: #000000;
+    font-weight: bold;
+}
+.details_1 h2 {
+    padding-top: 20px;
+}
+.details_1 ul {
+    border-bottom: 1px solid #ECECEC;
+    width: 35%;
+    padding-bottom: 15px;
+    padding-top: 20px;
+}
+.details_1 li {
+    display: inline;
+    margin: 8px;
+}
+.details_1 li i {
+    padding-right: 10px;
+    color: #D21E2B;
+}
+.details_1 li a {
+    color: #999;
+    font-size: 16px;
+}
+.details_1 li a:hover{
+    color: #D21E2B;
+    font-size: 16px;
+}
+.details_2 p {
+    font-size: 18px;
+    line-height: 25px;
+    color: #99999C;
+    padding-top: 20px;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+.details_2 h5 {
+    font-size: 18px;
+    line-height: 25px;
+    color: #99999C;
+    padding-top: 10px;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+.details_3 p {
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 190%;
+    letter-spacing: 0.5px;
+    padding-bottom: 20px;
+}
+.details_3 {
+    background: #eb1c24;
+    padding: 20px 20px 20px 20px;
+    border-left: 4px solid #8e0606;
+}
+.details_3 h4 {
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+}
+.details_4 p {
+    font-size: 18px;
+    line-height: 25px;
+    color: #99999C;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+.details_5 {
+    background-image: url(../img/41.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.details_5 h2 i {
+    color: #fd0606;
+    font-size: 70px;
+}
+.details_6 p {
+    color: #999;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 140%;
+}
+.details_6 {
+    padding-left: 30px;
+}
+.details_7 p {
+    color: #999;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 140%;
+    padding-top: 20px;
+}
+.details_8 ul {
+    padding-top: 20px;
+}
+.details_8 li a:hover {
+    background: #000000;
+    color: #FFFFFF;
+}
+.details_8 li {
+    display: inline;
+    margin: 5px;
+}
+.details_8 li a {
+    padding: 8px 20px;
+    color: #ffffff;
+    background: #d21e2b;
+    font-size: 14px;
+}
+.details_9 li {
+    display: inline;
+    margin: 5px;
+    font-size: 17px;
+    font-weight: bold;
+}
+.details_9 li a:hover {
+    color: #D21E31;
+}
+.details_9 li a {
+    color: #000;
+    font-size: 14px;
+}
+.details_9 ul {
+    padding-top: 20px;
+}
+.details_12 h5 {
+    padding-top: 20px;
+    font-size: 20px;
+}
+.details_12 p {
+    padding-bottom: 10px;
+	font-size: 16px;
+}
+label {
+    font-size: 18px;
+    padding-top: 10px;
+    color: #999999;
+}
+.details_13 textarea {
+    width: 100%;
+    padding-bottom: 70px;
+    border-radius: 0;
+    margin-bottom: 20px;
+}
+.details_14 input {
+    border: 1px solid #CCCCCC;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.details_15 p a:hover {
+    background: #CC3333;
+    color: #FFFFFF;
+}
+.details_15 p a {
+    text-decoration: none;
+    color: #ffffff;
+    border: 1px solid #eb1c24;
+    padding: 12px 15px 12px 15px;
+    border-radius: 4px;
+    background-color: #eb1c24;
+    font-size: 16px;
+}
+.details_15 p{
+    padding-top:20px;
+	padding-bottom: 30px;
+}
+/********************* details_end****************/
+
+
+
+
+
+
+
+
+@media screen and (max-width : 767px){
+.details_5 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.details_1 ul {
+    width: 100%;
+}
+.details_6 p {
+    padding-top: 10px;
+}
+.details_6 {
+    padding-left: 0px;
+}
+}
+
+@media (min-width:470px) and (max-width:767px) {
+
+}
+
+@media (min-width:768px) and (max-width:960px) {
+.details_2 p {
+    font-size: 15px;
+    line-height: 20px;
+	padding-bottom: 0px;
+}
+.details_2 h5 {
+    font-size: 15px;
+    line-height: 20px;
+}
+.details_3 p {
+    font-size: 15px;
+    line-height: 20px;
+}
+.details_4 p {
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: bold;
+}
+.details_6 p {
+    font-size: 15px;
+    line-height: 100%;
+}
+.details_7 p {
+    font-size: 15px;
+    line-height: 130%;
+    padding-top: 10px;
+}
+.details_8 li a {
+    padding: 8px 10px;
+}
+.details_9 li {
+    margin: 2px;
+    font-size: 15px;
+}
+.details_12 p {
+    padding-bottom: 0px;
+}
+}
+
+
+@media (min-width:961px) and (max-width:1200px) {
+.details_2 p {
+    font-size: 15px;
+    line-height: 20px;
+	padding-bottom: 0px;
+}
+.details_2 h5 {
+    font-size: 15px;
+    line-height: 20px;
+}
+.details_3 p {
+    font-size: 15px;
+    line-height: 20px;
+}
+.details_4 p {
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: bold;
+}
+.details_6 p {
+    font-size: 15px;
+    line-height: 100%;
+}
+.details_7 p {
+    font-size: 15px;
+    line-height: 130%;
+    padding-top: 10px;
+}
+.details_8 li a {
+    padding: 8px 10px;
+}
+.details_9 li {
+    margin: 2px;
+    font-size: 15px;
+}
+.details_12 p {
+    padding-bottom: 0px;
+}
+}
+
+@media (min-width:1201px) and (max-width:1320px) {
+
+}

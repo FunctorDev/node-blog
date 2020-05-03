@@ -1,0 +1,127 @@
+/*
+Template Name: film banner
+File: Layout CSS
+Author: Templates On Web
+Author URI: http://templateonweb.com/
+Licence: <a href="http://www.templateonweb.com/terms.php?v=content&contentid=152">Website Template Licence</a>
+*/
+
+body{
+font-family: 'Philosopher', sans-serif; 
+  }
+h1,h2,h3,h4,h5,h6{
+padding:0;
+margin:0;
+}
+a:hover{
+text-decoration:none;
+}
+ul{
+padding:0;
+margin:0;
+list-style:none;
+}
+p{
+padding:0;
+margin:0;
+}
+.space_left{
+padding-left:0; 
+} 
+.space_right{
+padding-right:0; 
+} 
+.space_all{
+padding:0; 
+} 
+.border_none_1{
+border:none!important;
+ }
+
+
+/********************* contact ****************/
+#contact{ 
+padding-top:50px;
+padding-bottom:50px;
+background-color:#f1f1f13b;
+  }
+.contact_1 h2{ 
+font-size:40px;
+font-weight:bold;
+padding-bottom:50px;
+  }
+.contact_2 input {
+padding-top: 25px;
+padding-bottom: 25px;
+margin-bottom: 10px;
+}
+.contact_2 textarea {
+height: 155px;
+width: 100%;
+}
+.contact_3 p{
+ padding-top:30px;
+ }
+.contact_3 p a{
+border:2px solid #000;
+text-decoration:none;
+padding: 10px 30px 10px 30px;
+border-radius: 3px;
+color: #000;
+ }
+.contact_3 p a:hover{
+background: #FFC400;
+color: #fff;
+border:2px solid #FFC400;
+ }
+.contact_4 h5{
+    color: #8e0606;
+    font-size: 25px;
+	font-weight:bold;
+	padding-bottom:5px;
+ }
+.contact_4 p{
+color: #000;
+font-size:20px;
+padding-bottom:15px;
+ }
+/********************* contact_end ****************/
+
+
+
+
+
+
+
+
+@media screen and (max-width : 767px){
+#contact {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+.contact_1 h2 {
+    padding-bottom: 10px;
+}
+.contact_3 p {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+}
+
+@media (min-width:470px) and (max-width:767px) {
+
+}
+ 
+@media (min-width:768px) and (max-width:960px) { 
+
+} 
+
+ 
+@media (min-width:961px) and (max-width:1200px) {
+
+}
+
+@media (min-width:1201px) and (max-width:1320px) {
+
+}

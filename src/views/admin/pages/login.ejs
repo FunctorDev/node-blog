@@ -1,0 +1,27 @@
+<%- include('../layouts/head') %>
+
+<div class="p-login">
+    <div class="p-login__form">
+        <h3 class="text-center">Login</h3>
+
+        <div class="alert alert-danger d-none js-login-alert" role="alert">
+            Thông tin đăng nhập không đúng.
+        </div>
+
+        <form class="js-form-login">
+            <div class="form-group">
+                <label for="email">Username:</label>
+                <input type="text" class="form-control" name="username" placeholder="Username"/>
+            </div>
+            <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" name="password" placeholder="Password"/>
+            </div>
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<%- include('../layouts/foot') %>

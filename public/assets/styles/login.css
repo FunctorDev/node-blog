@@ -1,0 +1,15 @@
+.p-login {
+  align-items: center;
+  background: cadetblue;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.p-login__form {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  width: 30%;
+}
