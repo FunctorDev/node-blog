@@ -31,7 +31,8 @@ const withAuthenticate = ({ ignoreExpiration = false } = {}) => (
     })
     .then(() => next())
     .catch(() => {
-      res.redirect('/admin/auth/login');
+      next();
+      // res.redirect('/auth/login');
     });
 };
 

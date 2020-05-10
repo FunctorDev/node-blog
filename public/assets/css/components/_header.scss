@@ -1,0 +1,9 @@
+.c-header {
+  margin-top: 20px;
+
+  &__logo {
+    > img {
+      height: 200px;
+    }
+  }
+}

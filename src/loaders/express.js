@@ -4,6 +4,9 @@ import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import helmet from 'helmet';
+import flash from 'connect-flash';
+import session from 'express-session';
+import morgan from 'morgan';
 
 import { API_PREFIX, PATH_ROOT } from '@/config';
 
@@ -23,8 +26,8 @@ const loader = (app, env) => {
   app.set('views', path.join(__dirname, '..', '/views'));
 
   // Static files
-  app.use('/assets', express.static(path.join(PATH_ROOT, '/public')));
-  app.use('/uploads', express.static(path.join(PATH_ROOT, '/storage/uploads')));
+  app.use(express.static(path.join(PATH_ROOT, '/public')));
+  app.use(express.static(path.join(PATH_ROOT, '/storage/')));
 
   // Useful if you're behind a reverse proxy (Heroku, Bluemix, AWS ELB, Nginx, etc)
   // It shows the real origin IP in the heroku or Cloudwatch logs
@@ -38,12 +41,26 @@ const loader = (app, env) => {
   // Helmet will set various HTTP headers to help protect your app.
   app.use(helmet());
 
+  if (process.env.NODE_ENV === 'development') {
+    app.use(morgan('dev'));
+  }
+
   // Cookie
   app.use(cookieParser());
 
   // Middleware that transforms the raw string of req.body into json
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use(bodyParser.json());
+
+  app.use(
+    session({
+      secret: 'Lanh Khoc',
+      resave: false,
+      saveUninitialized: false,
+    })
+  );
+
+  app.use(flash());
 
   app.use(camelcase());
 

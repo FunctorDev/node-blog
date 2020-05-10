@@ -1,0 +1,33 @@
+.p-post-detail {
+  &__title {
+    font-family: Leander, "leanderregular", Georgia, serif;
+    text-align: center;
+
+    &:after {
+      background: url(/assets/img/owl.svg) center center no-repeat;
+      background-size: contain;
+      content: '';
+      display: block;
+      height: 75px;
+      margin: 30px auto 0;
+    }
+  }
+
+  &__content {
+    font-size: 20px;
+
+    p + p {
+      text-indent: 30px;
+    }
+  }
+
+  &__list-comment {
+    margin-top: 15px;
+  }
+
+  &__comment {
+    &:not(:first-child) {
+      margin-top: 15px;
+    }
+  }
+}

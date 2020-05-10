@@ -17,3 +17,7 @@ export const wrapError = (fn) => (...args) => {
     next(err);
   }
 };
+
+export const capitalizeFirstLetter = (string) => {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+};

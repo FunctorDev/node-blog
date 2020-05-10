@@ -1,0 +1,30 @@
+<%- include('../layouts/head') %>
+<%- include('../layouts/header') %>
+
+<div class="container u-mgy-50">
+    <form method="POST" action="/auth/login">
+        <% if (errors && errors.length) { %>
+            <div class="alert alert-danger" role="alert">
+                <% errors.forEach(error => { %>
+                    <p><%= error.message %></p>
+                <% }) %>
+            </div>
+        <% } %>
+
+        <div class="form-group">
+            <label for="f-username">Tên tài khoản</label>
+            <input type="text" name="username" class="form-control" id="f-username" aria-describedby="emailHelp"
+                   placeholder="Nhập tên tài khoản" value="<%= oldInput.username %>">
+        </div>
+
+        <div class="form-group">
+            <label for="f-password">Mật khẩu</label>
+            <input name="password" type="password" class="form-control" id="f-password" placeholder="Nhập mật khẩu"
+                   autocomplete="new-password" value="<%= oldInput.password %>">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Đăng nhập</button>
+    </form>
+</div>
+
+<%- include('../layouts/foot') %>

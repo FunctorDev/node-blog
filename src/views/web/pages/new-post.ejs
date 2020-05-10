@@ -1,0 +1,83 @@
+<%- include('../layouts/head') %>
+<%- include('../layouts/header') %>
+
+<div class="container u-mgy-50">
+    <form enctype="multipart/form-data" method="POST" action="/posts/new">
+        <% if (errors && errors.length) { %>
+            <div class="alert alert-danger" role="alert">
+                <% errors.forEach(error => { %>
+                    <p><%= error.message %></p>
+                <% }) %>
+            </div>
+        <% } %>
+
+        <div class="form-group">
+            <label class="control-label" for="f-title">Tiêu đề</label>
+            <input type="text" name="title" class="form-control" id="f-title"
+                   placeholder="Nhập tiêu đề" value="<%= oldInput.title %>">
+        </div>
+
+        <div class="form-group">
+            <label class="control-label" for="f-slug">Slug</label>
+            <input type="text" name="slug" class="form-control" id="f-slug"
+                   placeholder="Nhập slug" value="<%= oldInput.slug %>">
+        </div>
+
+        <div class="form-group">
+            <label class="control-label" for="f-category">Danh mục</label>
+            <select multiple class="form-control" id="f-category" name="category">
+                <% categories.forEach(category => { %>
+                    <option
+                    <% if(oldInput.category == category.id || (Array.isArray(oldInput.category) && oldInput.category.find(item => item == category.id))) { %>
+                        selected="selected"
+                            <% } %>
+                        value="<%= category.id %>"><%= category.title %></option>
+                <% }) %>
+            </select>
+        </div>
+
+        <div class="form-group required">
+            <label class="control-label" for="form-thumbnail">Thumbnail</label>
+            <div class="c-upload-file">
+                <input type="file" class="c-upload-file__input" id="f-thumbnail" name="thumbnail" accept="image/*">
+                <input type="hidden" name="oldThumbnail" value="<%= oldInput.thumbnail %>"/>
+                <label class="c-upload-file__label" for="f-thumbnail"
+                       style="background: url(<%= oldInput.thumbnail_url %>)">
+                    <span class="js-no-image <%= oldInput.thumbnail ? 'd-none' : '' %>">Upload</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label" for="f-tags">Tags</label>
+            <textarea name="tags" class="form-control" id="f-tags"
+                      placeholder="Nhiều tags sẽ ngăn cách nhau bởi dấu ;" value="<%= oldInput.tags %>"></textarea>
+            <small class="form-text text-muted">Nhiều tags sẽ ngăn cách nhau bởi dấu ;.</small>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label" for="f-summary">Tóm tắt</label>
+            <textarea name="summary" class="form-control" id="f-summary"
+                      placeholder="Nhập tóm tắt" value="<%= oldInput.summary %>"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label" for="f-summary">Nội dung</label>
+            <textarea id="js-editor-post-content" name="content"><%= oldInput.content %></textarea>
+        </div>
+
+        <div class="form-group">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="status" value="PUBLISH" id="f-status"
+                       checked="<%= oldInput.status === 'PUBLISH' %>">
+                <label class="form-check-label" for="f-status">
+                    Công khai
+                </label>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Đăng bài</button>
+    </form>
+</div>
+
+<%- include('../layouts/foot') %>

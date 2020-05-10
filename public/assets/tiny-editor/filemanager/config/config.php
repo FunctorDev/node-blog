@@ -57,7 +57,7 @@ define('DEBUG_ERROR_MESSAGE', false); // TRUE or FALSE
 |    |   |   |   |   |- plugin.min.js
 */
 
-$BASE_URL = 'http://www.website18.local';
+$BASE_URL = 'http://www.edoccode.local';
 $config = array(
 
     /*

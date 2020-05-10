@@ -1,0 +1,53 @@
+<%- include('../layouts/head') %>
+<%- include('../layouts/header') %>
+
+<div class="container u-mgy-50">
+    <form enctype="multipart/form-data" method="POST" action="/auth/register">
+        <% if (errors && errors.length) { %>
+            <div class="alert alert-danger" role="alert">
+                <% errors.forEach(error => { %>
+                    <p><%= error.message %></p>
+                <% }) %>
+            </div>
+        <% } %>
+
+        <div class="form-group">
+            <label for="f-username">Tên tài khoản</label>
+            <input type="text" name="username" class="form-control" id="f-username" aria-describedby="emailHelp"
+                   placeholder="Nhập tên tài khoản" value="<%= oldInput.username %>">
+        </div>
+
+        <div class="form-group">
+            <label for="f-name">Họ và tên</label>
+            <input type="text" name="name" class="form-control" id="f-name" aria-describedby="emailHelp"
+                   placeholder="Nhập họ và tên" value="<%= oldInput.name %>">
+        </div>
+
+        <div class="form-group required">
+            <label class="control-label" for="form-thumbnail">Avatar</label>
+            <div class="c-upload-file">
+                <input type="file" class="c-upload-file__input" id="f-avatar" name="avatar" accept="image/*">
+                <input type="hidden" name="oldAvatar" value="<%= oldInput.avatar %>" />
+                <label class="c-upload-file__label" for="f-avatar" style="background: url(<%= oldInput.avatar_url %>)">
+                    <span class="js-no-image <%= oldInput.avatar ? 'd-none' : '' %>">Upload</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="f-password">Mật khẩu</label>
+            <input name="password" type="password" class="form-control" id="f-password" placeholder="Nhập mật khẩu"
+                   autocomplete="new-password" value="<%= oldInput.password %>">
+        </div>
+
+        <div class="form-group">
+            <label for="f-confirm-password">Xác nhận mật khẩu</label>
+            <input name="confirmPassword" type="password" class="form-control" id="f-confirm-password"
+                   placeholder="Nhập xác nhận mật khẩu" value="<%= oldInput.confirmPassword %>">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Đăng ký</button>
+    </form>
+</div>
+
+<%- include('../layouts/foot') %>

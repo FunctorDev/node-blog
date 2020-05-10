@@ -1,0 +1,80 @@
+<%- include('../layouts/head') %>
+<%- include('../layouts/header') %>
+
+<div class="container u-mgy-50 p-post-detail">
+    <div class="row">
+        <div class="col-8">
+            <h1 class="p-post-detail__title"><%= post.title %></h1>
+
+            <div class="u-text-italic u-fz-18">
+                <span>Viết bởi <%= post.user.name %> vào lúc </span>
+                <time datetime="2020-04-13T10:00:00.000Z">
+                    <%= dateFns.format(post.createdAt, 'dd') %>
+                    <sup>th</sup>
+                    <%= dateFns.format(post.createdAt, 'MMM') %>
+                    <%= dateFns.format(post.createdAt, 'yyyy') %>
+                </time>
+            </div>
+
+            <hr/>
+            <div class="p-post-detail__content">
+                <%- post.content %>
+            </div>
+            <hr/>
+
+            <div class="u-mgy-30">
+                <form action="/likes/new" method="POST">
+                    <input type="hidden" name="postId" value="<%= post.id %>"/>
+                    <button type="submit" class="btn btn-link <%= post.didMeLike ? 'u-color-black' : '' %>"><%= post.totalLike %> Like</button>
+                </form>
+            </div>
+
+            <div class="p-post-detail__add-comment">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="/comments/new" method="POST">
+                            <% if (errors && errors.length) { %>
+                                <div class="alert alert-danger" role="alert">
+                                    <% errors.forEach(error => { %>
+                                        <p><%= error.message %></p>
+                                    <% }) %>
+                                </div>
+                            <% } %>
+
+                            <input type="hidden" name="postId" value="<%= post.id %>"/>
+                            <div class="form-group">
+                                <textarea name="content" class="form-control" id="f-tags"
+                                          placeholder="Nhập bình luận"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Bình luận</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-post-detail__list-comment">
+                <% post.comments.forEach(comment => { %>
+                    <div class="card p-post-detail__comment">
+                        <div class="card-body">
+                            <div class="card-title d-flex justify-content-between">
+                                <h5><%= comment.user.name %></h5>
+                                <em title="<%= comment.createdAt %>"><%= dateFns.format(comment.createdAt, 'MMM yy') %></em>
+                            </div>
+                            <p class="card-text"><%= comment.content %></p>
+                            <a href="#" class="card-link">Reply</a>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <%- include('../components/category') %>
+        </div>
+    </div>
+</div>
+
+<%- include('../layouts/foot') %>

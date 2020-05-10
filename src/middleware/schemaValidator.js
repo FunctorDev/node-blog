@@ -17,11 +17,11 @@ export default (schema, isApi = false, useJoiError = true) => {
   // return the validation middleware
   return (req, res, next) => {
     const method = req.method.toLowerCase();
+    console.log(req.body)
 
     if (includes(method, _supportedMethods)) {
       if (schema) {
         // Validate req.body using the schema and validation options
-
         return schema
           .validateAsync(req.body, _validationOptions)
           .then((data) => {

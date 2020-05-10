@@ -1,7 +1,8 @@
 import { BASE_PATH, FILE_STORAGE_HOSTING } from '@/config';
 
-export const fileUrl = (fileName) => {
-  return`${FILE_STORAGE_HOSTING}/${fileName}`;
+export const fileUploadUrl = (fileName, folder = 'uploads') => {
+  const folderWithSlash = folder ? `/${folder}/` : '';
+  return`${FILE_STORAGE_HOSTING}${folderWithSlash}${fileName}`;
 };
 
 export const staticUrl = (url) => {

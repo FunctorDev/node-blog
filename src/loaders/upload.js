@@ -1,6 +1,7 @@
 import multer from 'multer';
 import fs from 'fs';
 import path from 'path';
+import mimeTypes from 'mime-types';
 import { PATH_ROOT } from '@/config';
 
 // SET STORAGE
@@ -19,9 +20,37 @@ const storage = multer.diskStorage({
   },
 });
 
-const upload = (config = {}) => multer({
-  ...config,
-  storage: storage,
-});
+const upload = (config = {}) =>
+  multer({
+    ...config,
+    storage: storage,
+  });
+
+export const fileFilterImage = (req, file, cb) => {
+  const type = mimeTypes.lookup(file.originalname);
+
+  if (type.startsWith('image/')) {
+    cb(null, true);
+  } else {
+    return cb(new Error('Chỉ ảnh .png, .jpg and .jpeg được cho phép!'));
+  }
+};
+
+export const uploadSingleImage = (field, config = {}) => {
+  const uploadFile = upload({
+    ...config,
+    fileFilter: fileFilterImage,
+  }).single(field);
+
+  return (req, res, next) => {
+    uploadFile(req, res, (err) => {
+      if (err) {
+        req.multerError = [{ message: err.message }];
+      }
+
+      next();
+    });
+  };
+};
 
 export default upload;

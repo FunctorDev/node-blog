@@ -1,6 +1,6 @@
 import camelcaseKeys from 'camelcase-keys';
 
-const camelcase = () => {
+const camelCase = () => {
   return function (req, res, next) {
     req.body = camelcaseKeys(req.body, { deep: true });
     req.params = camelcaseKeys(req.params);
@@ -9,4 +9,4 @@ const camelcase = () => {
   };
 };
 
-export default camelcase;
+export default camelCase;

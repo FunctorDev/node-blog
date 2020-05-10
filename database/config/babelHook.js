@@ -3,4 +3,4 @@ require('@babel/register');
 
 const config = require('./config.js');
 
-export default config.default;
+module.exports = config.default;

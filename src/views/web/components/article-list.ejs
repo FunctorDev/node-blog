@@ -1,0 +1,25 @@
+<div class="c-article-list">
+    <% if (articles && articles.length) {
+    articles.forEach(article => { %>
+        <div class="c-article-list__item c-article-item">
+            <h2 class="c-article-item__title">
+                <a href="/posts/<%= article.slug %>" class="c-article-item__link"><%= article.title %></a>
+            </h2>
+
+            <p class="c-article-item__meta">
+                <span>Viết bởi <%= article.user.name %> vào lúc </span>
+                <time datetime="2020-04-13T10:00:00.000Z">
+                    <%= dateFns.format(article.createdAt, 'dd') %>
+                    <sup>th</sup>
+                    <%= dateFns.format(article.createdAt, 'MMM') %>
+                    <%= dateFns.format(article.createdAt, 'yyyy') %>
+                </time>
+            </p>
+
+            <div class="c-article-item__summary">
+                <%= article.summary %>
+            </div>
+        </div>
+    <% }) %>
+    <% } %>
+</div>
